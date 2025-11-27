@@ -180,7 +180,7 @@ class DiffusionTransformer(nn.Module):
     def get_device(self):
         return self.token_emb.weight.device
 
-    def forward(self, x_t, t):
+    def forward(self, x_t, t, return_hidden_states=False):
         """
         Forward pass for diffusion model
         Args:
@@ -210,6 +210,8 @@ class DiffusionTransformer(nn.Module):
 
         # Predict denoised tokens
         logits = self.output_head(x)  # (B, T, vocab_size)
+        if return_hidden_states:
+            return logits, x
         return logits
 
     @torch.inference_mode()

@@ -1,0 +1,88 @@
+/* viz-frontend/src/index.css */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Default Dark Mode Variables */
+  --bg-color: #242424;
+  --text-color: rgba(255, 255, 255, 0.87);
+  --primary-color: #646cff;
+  --secondary-color: #535bf2;
+  --panel-bg: #333;
+  --panel-border: #555;
+  --input-bg: #444;
+  --input-border: #555;
+  --button-bg: #007bff;
+  --button-hover-bg: #0056b3;
+  --button-disabled-bg: #6c757d;
+  --header-border: #333;
+}
+
+/* Light Mode Variables */
+:root.light {
+  --bg-color: #ffffff;
+  --text-color: #213547;
+  --primary-color: #747bff;
+  --secondary-color: #646cff;
+  --panel-bg: #f0f0f0;
+  --panel-border: #ccc;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --button-bg: #007bff;
+  --button-hover-bg: #0056b3;
+  --button-disabled-bg: #a0a0a0;
+  --header-border: #ccc;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color); /* Use variable */
+  color: var(--text-color); /* Use variable */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  font-weight: 500;
+  color: var(--primary-color); /* Use variable */
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--secondary-color); /* Use variable */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--button-bg); /* Use variable */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.3s;
+  color: white; /* Ensure button text is white */
+}
+button:hover {
+  border-color: var(--primary-color);
+  background-color: var(--button-hover-bg); /* Use variable */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

@@ -1,0 +1,116 @@
+/* viz-frontend/src/App.css */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  color: var(--text-color); /* Use variable */
+  background-color: var(--bg-color); /* Use variable */
+}
+
+.App-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--header-border); /* Use variable */
+  margin-bottom: 20px;
+}
+
+.App-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between control panel and visualization */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* ControlPanel styles already defined with inline styles, will update there */
+/* Or adjust to use classes */
+/* I will adjust ControlPanel to use classes for theme */
+
+.Control-panel {
+  flex: 0 0 320px; /* Fixed width for control panel */
+  background-color: var(--panel-bg); /* Use variable */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Visualization-area {
+  flex: 1; /* Take remaining space */
+  min-width: 400px; /* Minimum width for visualization */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* General form element styling */
+.Control-panel label { /* Target labels within ControlPanel */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.Control-panel input[type="text"],
+.Control-panel input[type="number"],
+.Control-panel select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--input-border); /* Use variable */
+  background-color: var(--input-bg); /* Use variable */
+  color: var(--text-color); /* Use variable */
+}
+
+/* Update buttons to use global button style defined in index.css */
+.Control-panel button {
+  /* No specific styles here, they inherit from index.css button */
+}
+
+.Control-panel button:disabled {
+  background-color: var(--button-disabled-bg); /* Use variable */
+  cursor: not-allowed;
+}
+
+
+/* Basic styling for TextDisplay and Vis3D containers */
+.Text-display-container {
+  width: 100%;
+  text-align: left;
+}
+
+/* Assuming Vis3D is directly in Visualization-area */
+canvas {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle {
+  margin-bottom: 20px;
+  text-align: right;
+  width: 100%;
+}
+.theme-toggle button {
+  background: none;
+  border: 1px solid var(--button-bg);
+  color: var(--button-bg);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.theme-toggle button:hover {
+  background: var(--button-bg);
+  color: white;
+}
